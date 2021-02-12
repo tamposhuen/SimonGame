@@ -6,13 +6,12 @@ var buttonColors = ["red", "blue", "green", "yellow"];
 var numOfKeypress = 0;
 
 
-$(document).keypress(function (event) {
+$('h1').click(function (event) {
   numOfKeypress++;
   if (numOfKeypress === 1) {
     nextSequence();
   }
 })
-
 
 function nextSequence() {
   userClickedPattern = [];
@@ -23,10 +22,10 @@ function nextSequence() {
   gamePattern.push(randomChosenColor);
   $(`#${randomChosenColor}`).fadeIn(150).fadeOut(150).fadeIn(150);
   playSound(randomChosenColor);
-  console.log("gamePattern:" + gamePattern);
+  // console.log("gamePattern:" + gamePattern);
 };
 
-$(".btn").click(function (event) {
+$('.btn').click(function (event) {
   var userChosenColor = event.toElement.id;
   userClickedPattern.push(userChosenColor);
   animatePress(userChosenColor);
@@ -57,11 +56,12 @@ function checkAnswer(currentLevel) {
 
     }
   } else {
+    console.log('failed')
     $('body').addClass('game-over');
     setTimeout(function () {
       $('body').removeClass('game-over')
     }, 300);
-    $('h1').text("Game Over, Press Any Key to Restart");
+    $('h1').html('Game Over, Press <i class="far fa-play-circle"></i> to Play Again!');
     var gameOverSound = new Audio('sounds/wrong.mp3');
     gameOverSound.play();
     startOver();
