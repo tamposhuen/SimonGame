@@ -20,12 +20,15 @@ body {
 .btn {
   margin: 2px;
   display: inline-block;
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   border: 10px solid rgba(0, 0, 0, 0.774);
-  /* border-radius: 20%; */
-}
 
+}
+/* .row{
+  max-width: 100%;
+  height: auto;
+} */
 .game-over {
   background-color: rgba(255, 0, 0, 0.356);
   opacity: 0.8;
@@ -34,21 +37,25 @@ body {
 .red {
   background-color: #ef476f;
   border-radius: 0 100% 0 0;
+  /* position: relative; */
 }
 
 .green {
   background-color: #06d6a0;
-     border-radius: 100% 0 0 0;
+  border-radius: 100% 0 0 0;
+  /* position: relative; */
 }
 
 .blue {
   background-color: #118ab2;
   border-radius: 0 0 100% 0;
+  /* position: relative; */
 }
 
 .yellow {
   background-color: #ffd166;
   border-radius: 0 0 0 100%;
+  /* position: relative; */
 }
 
 .pressed {
